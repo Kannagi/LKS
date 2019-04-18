@@ -17,7 +17,7 @@
 
 .SNESHEADER
 	ID    "SNES"
-	NAME  "Super Papi Commando  "
+	NAME  "LKS Example          "
 	;     "123456789012345678901"
 	LOROM
 	SLOWROM
