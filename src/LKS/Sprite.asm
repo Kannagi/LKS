@@ -70,37 +70,37 @@ LKS_Sprite_Anim:
 	bit #$80
 	bne +
 	lda LKS_SPRITE.Anim_act,x
-    cmp LKS_SPRITE.Anim_old,x
-    beq +
+	cmp LKS_SPRITE.Anim_old,x
+	beq +
 		sta LKS_SPRITE.Anim_old,x
 		stz LKS_SPRITE.Anim_l,x
 		stz LKS_SPRITE.Anim_i,x
 		lda #$80
 		sta MEM_RETURN
-    +:
+	+:
 
 	inc LKS_SPRITE.Anim_l,x
-    lda LKS_SPRITE.Anim_l,x
-    cmp LKS_SPRITE.Anim_v,x
-    bne +
+	lda LKS_SPRITE.Anim_l,x
+	cmp LKS_SPRITE.Anim_v,x
+	bne +
 		stz LKS_SPRITE.Anim_l,x
 		inc LKS_SPRITE.Anim_i,x
 		lda #$80
 		sta MEM_RETURN
-    +:
+	+:
 
-    stz LKS_SPRITE.Anim_end,x
-    lda LKS_SPRITE.Anim_i,x
-    cmp LKS_SPRITE.Anim_n,x
-    bne +
+	stz LKS_SPRITE.Anim_end,x
+	lda LKS_SPRITE.Anim_i,x
+	cmp LKS_SPRITE.Anim_n,x
+	bne +
 		stz LKS_SPRITE.Anim_l,x
 		stz LKS_SPRITE.Anim_i,x
 		lda #$80
 		sta LKS_SPRITE.Anim_end,x
 		sta MEM_RETURN
-    +:
-    
-    lda LKS_SPRITE.Anim_type,x
+	+:
+	
+	lda LKS_SPRITE.Anim_type,x
 	and #$40
 	cmp #0
 	beq +
@@ -110,12 +110,12 @@ LKS_Sprite_Anim:
 		and #$FF-$40
 		sta LKS_SPRITE.Anim_type,x
 	+:
-    
-    
-    lda LKS_SPRITE.Anim_flg,x
-    and #$7F
-    ora MEM_RETURN
-    sta LKS_SPRITE.Anim_flg,x
+	
+	
+	lda LKS_SPRITE.Anim_flg,x
+	and #$7F
+	ora MEM_RETURN
+	sta LKS_SPRITE.Anim_flg,x
  
 	rtl
 	
@@ -157,20 +157,20 @@ LKS_Sprite_DMA:
 	
 	
 
-    ;Anim Y
-    lda MEM_TEMP+8
-    asl
-    asl
-    asl
+	;Anim Y
+	lda MEM_TEMP+8
+	asl
+	asl
+	asl
 	sta WRMPYA
 	
 	lda LKS_SPRITE.Anim_flg,x
 	sta MEM_TEMP+6
 	and #$0F
-    asl
-    asl
-    asl
-    asl
+	asl
+	asl
+	asl
+	asl
 	sta WRMPYB
 	
 	lda MEM_TEMP+6
@@ -185,8 +185,8 @@ LKS_Sprite_DMA:
 	sta MEM_TEMP+4
 	
 	sep #$20
-    
-    ;Anim X
+	
+	;Anim X
 	lda MEM_TEMP+10
 	sta WRMPYA
 	

@@ -153,7 +153,7 @@ LKS_printf16_draw:
 	stx MEM_TEMP + 1
 	compute_digit_for_base16   100
 	stx MEM_TEMP + 2
-	compute_digit_for_base16    10
+	compute_digit_for_base16	10
 	stx MEM_TEMP + 3
 	sta MEM_TEMP + 4
 	
@@ -234,7 +234,7 @@ LKS_printfu16_draw:
 	stx MEM_TEMP + 1
 	compute_digit_for_base16   100
 	stx MEM_TEMP + 2
-	compute_digit_for_base16    10
+	compute_digit_for_base16	10
 	stx MEM_TEMP + 3
 	sta MEM_TEMP + 4
 	
@@ -280,7 +280,7 @@ LKS_printfu8_draw:
 	
 	compute_digit_for_base8   100
 	stx MEM_TEMP + 0
-	compute_digit_for_base8    10
+	compute_digit_for_base8	10
 	stx MEM_TEMP + 1
 	sta MEM_TEMP + 2
 	
@@ -343,7 +343,7 @@ LKS_printf8_draw:
 	
 	compute_digit_for_base8   100
 	stx MEM_TEMP + 0
-	compute_digit_for_base8    10
+	compute_digit_for_base8	10
 	stx MEM_TEMP + 1
 	sta MEM_TEMP + 2
 	

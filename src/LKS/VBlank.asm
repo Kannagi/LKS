@@ -5,7 +5,7 @@ VBlank0:
 	;---------------------------
 	jsl LKS_BackgroundX
 	jsl LKS_BackgroundY  
-	;---------------------------    
+	;---------------------------	
 
 	LKS_DMA_VRAM 0
 	LKS_DMA_VRAM 1
@@ -14,13 +14,13 @@ VBlank0:
 	
 	LKS_DMA_VRAM 4
 
-    ;---------------------------
-    
+	;---------------------------
+	
 	jsl LKS_DMA_PAL
 
 	LKS_BG_update
-    rtl
-    
+	rtl
+	
 WaitVBlank:
 
 	lda LKS.clockf

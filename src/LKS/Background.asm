@@ -1,81 +1,81 @@
 
 
 .MACRO draw_bg_ligne
-    
-    ldy #\1
-    sty VMADDL
-    
-    ldy #$0020
-    
-    stx DMA_BANK + $00
-    sta DMA_ADDL + $00
-    sty DMA_SIZEL + $00
-    
-    ldy #$01
-    sty MDMAEN
-    
+
+	ldy #\1
+	sty VMADDL
+
+	ldy #$0020
+
+	stx DMA_BANK + $00
+	sta DMA_ADDL + $00
+	sty DMA_SIZEL + $00
+
+	ldy #$01
+	sty MDMAEN
+
 	adc LKS_BG.addyr
-	
+
 .ENDM
 
 
 .MACRO background ARGS _addsc
 	
-    rep #$20
-    
-    clc
+	rep #$20
+	
+	clc
 	txa
 	
 	ldx MEM_TEMPFUNC
 	
-    ;colonne 0 
-    draw_bg_ligne _addsc + $0
-    
-    ;colonne 1
-    draw_bg_ligne _addsc + $20
+	;colonne 0 
+	draw_bg_ligne _addsc + $0
+	
+	;colonne 1
+	draw_bg_ligne _addsc + $20
 
 	;colonne 2
-    draw_bg_ligne _addsc + $40
+	draw_bg_ligne _addsc + $40
 	
 	;colonne 3
-    draw_bg_ligne _addsc + $60
+	draw_bg_ligne _addsc + $60
 	
 	;colonne 4
-    draw_bg_ligne _addsc + $80
+	draw_bg_ligne _addsc + $80
 	
 	;colonne 5
-    draw_bg_ligne _addsc + $A0
+	draw_bg_ligne _addsc + $A0
 	
 	;colonne 6
-    draw_bg_ligne _addsc + $C0
+	draw_bg_ligne _addsc + $C0
 	
 	;colonne 7
-    draw_bg_ligne _addsc + $E0
+	draw_bg_ligne _addsc + $E0
 	
 	;colonne 8
-    draw_bg_ligne _addsc + $100
+	draw_bg_ligne _addsc + $100
 	
 	;colonne 9
-    draw_bg_ligne _addsc + $120
+	draw_bg_ligne _addsc + $120
 	
 	;colonne 10
-    draw_bg_ligne _addsc + $140
+	draw_bg_ligne _addsc + $140
 	
 	;colonne 11
-    draw_bg_ligne _addsc + $160
+	draw_bg_ligne _addsc + $160
 	
 	;colonne 12
-    draw_bg_ligne _addsc + $180
+	draw_bg_ligne _addsc + $180
 	
 	;colonne 13
-    draw_bg_ligne _addsc + $1A0
-    
-    ;colonne 14
-    draw_bg_ligne _addsc + $1C0
-    
-    ;colonne 15
-    draw_bg_ligne _addsc + $1E0
-    
+	draw_bg_ligne _addsc + $1A0
+	
+	;colonne 14
+	draw_bg_ligne _addsc + $1C0
+	
+	;colonne 15
+	draw_bg_ligne _addsc + $1E0
+	
 	
 	sep #$20
 .ENDM
@@ -630,7 +630,7 @@ LKS_Scrolling:
 	clc
 	adc MEM_TEMP+6
 	sta LKS_BG.Dadd2_1
-    
+	
 	
 	sep #$20
 	

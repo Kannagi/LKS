@@ -12,39 +12,39 @@ LKS_BackgroundY:
 	stx VMADDL
 	
 	ldx LKS_BG.Dadd1_1
-    lda LKS_BG.Address1+2
+	lda LKS_BG.Address1+2
 	ldy #$20
 	
 	stx DMA_ADDL+$00
 	sta DMA_BANK+$00
 	sty DMA_SIZEL+$00
 	 
-    ldx LKS_BG.Dadd2_1
+	ldx LKS_BG.Dadd2_1
 	
-    stx DMA_ADDL+$10
+	stx DMA_ADDL+$10
 	sta DMA_BANK+$10
 	sty DMA_SIZEL+$10
 	
-    SNES_MDMAEN $03
-    
-    ;BG2
-    ldx LKS_BG.V_vadd2
+	SNES_MDMAEN $03
+	
+	;BG2
+	ldx LKS_BG.V_vadd2
 	stx VMADDL
 	
 	ldx LKS_BG.Dadd1_2
-    lda LKS_BG.Address2+2
+	lda LKS_BG.Address2+2
 	
 	stx DMA_ADDL+$00
 	sta DMA_BANK+$00
 	sty DMA_SIZEL+$00
 	 
-    ldx LKS_BG.Dadd2_2
+	ldx LKS_BG.Dadd2_2
 	
-    stx DMA_ADDL+$10
+	stx DMA_ADDL+$10
 	sta DMA_BANK+$10
 	sty DMA_SIZEL+$10
 	
-    SNES_MDMAEN $03
+	SNES_MDMAEN $03
 
 		
 	rtl
@@ -61,8 +61,8 @@ LKS_BackgroundX:
 	
 	ldx LKS_BG.H_vadd1
 	stx VMADDL
-    
-    lda #$7E
+	
+	lda #$7E
 	ldx #LKS_BUF_BGS1&$FFFF
 	ldy #$40
 	
@@ -70,19 +70,19 @@ LKS_BackgroundX:
 	stx DMA_ADDL
 	sty DMA_SIZEL
 	
-    SNES_MDMAEN $01
-    
-    ldx LKS_BG.H_vadd2
+	SNES_MDMAEN $01
+	
+	ldx LKS_BG.H_vadd2
 	stx VMADDL
-    
-    lda #$7E
+	
+	lda #$7E
 	ldx #LKS_BUF_BGS2&$FFFF
 	
 	sta DMA_BANK
 	stx DMA_ADDL
 	sty DMA_SIZEL
 	
-    SNES_MDMAEN $01
+	SNES_MDMAEN $01
 	
 	SNES_VMAINC $80
 

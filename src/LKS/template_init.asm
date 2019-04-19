@@ -1,10 +1,11 @@
 
 LKS_MODE_ALPHA:
 	SNES_TS $11
-	    
+		
 	SNES_CGSWSEL $02
 	SNES_CGADSUB $42
 	rtl
+	
 LKS_GAMELOOP_INIT:
 	
 	lda	RDNMI
@@ -38,9 +39,9 @@ LKS_INIT:
 	SNES_COLDATA $E0
 
 	;object
-	SNES_OBJSEL $03 ; 8/16 , $6000 address
+	SNES_OBJSEL $03 ;$30 : 16/32 ; 8/16 , $6000 address
 	
 		
-    SNES_VMAINC $80
-    SNES_INIDISP $8F ; FORCED BLANK , brigtness 15
+	SNES_VMAINC $80
+	SNES_INIDISP $8F ; FORCED BLANK , brigtness 15
 	rtl

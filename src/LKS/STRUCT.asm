@@ -35,18 +35,18 @@ vout	db
 
 .STRUCT SLKS_OAM
 zorderadr  	dw
-n1      	db
-n2	    	db
-x	    	dw
-y	    	dw
+n1	  	db
+n2			db
+x			dw
+y			dw
 tile		dw
 ext			db
 sz			dw
 tmp1		dw
 tmp2		dw
-zorder     	DSB $20-2
-nperso1    	db 
-nperso2    	db 
+zorder	 	DSB $20-2
+nperso1		db 
+nperso2		db 
 .ENDST
 
 .STRUCT SLKS_BG

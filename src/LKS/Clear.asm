@@ -38,10 +38,10 @@ LKS_Clear_RAM:
 
 
 LKS_Clear_VRAM:
-    
-    SNES_VMADD $0000
-    
-    ldy #$0000
+	
+	SNES_VMADD $0000
+	
+	ldy #$0000
 	ldx #0
 	-:
 		sty VMDATAL
@@ -70,9 +70,9 @@ LKS_Clear_VRAM:
 	rtl
 
 LKS_Clear_OAM:
-    
+	
 	SNES_OAMADD $0000
-    
+	
 	ldy #$0000
 	sty $0000
 	ldx #$0000

@@ -40,10 +40,10 @@
 
 .MACRO compute_digit_for_base16 ARGS _base
 	; [input] registre A sur 16 bits qui contient le nombre dans la bonne tranche par rapport à _base
-	;     Autrement dit, _base <= A < (10 * _base)
+	;	 Autrement dit, _base <= A < (10 * _base)
 	; [output]
-	;     [X] le registre X contient le chiffre pour la _base
-	;     [A] contient le reste (module _base) ==> donc 0 <= A < _base
+	;	 [X] le registre X contient le chiffre pour la _base
+	;	 [A] contient le reste (module _base) ==> donc 0 <= A < _base
 	;
 	; _base vaut une puissance non nul de 10
 	; On détermine les chiffres les uns après les autres depuis le plus grand avec _base = 10000
@@ -78,10 +78,10 @@
 
 .MACRO compute_digit_for_base8 ARGS _base
 	; [input] registre A sur 16 bits qui contient le nombre dans la bonne tranche par rapport à _base
-	;     Autrement dit, _base <= A < (10 * _base)
+	;	 Autrement dit, _base <= A < (10 * _base)
 	; [output]
-	;     [X] le registre X contient le chiffre pour la _base
-	;     [A] contient le reste (module _base) ==> donc 0 <= A < _base
+	;	 [X] le registre X contient le chiffre pour la _base
+	;	 [A] contient le reste (module _base) ==> donc 0 <= A < _base
 	;
 	; _base vaut une puissance non nul de 10
 	; On détermine les chiffres les uns après les autres depuis le plus grand avec _base = 10000

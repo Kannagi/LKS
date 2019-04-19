@@ -142,8 +142,8 @@ LKS_DMA_BG3:
 	stx DMA_ADDL
 	sty VMADDL
 	
-    SNES_MDMAEN $01
-    
+	SNES_MDMAEN $01
+	
 	rtl
 
 LKS_DMA_OAM:
@@ -159,7 +159,7 @@ LKS_DMA_OAM:
 	stx DMA_ADDL+CHANNEL4
 	sty DMA_SIZEL+CHANNEL4
 	
-    SNES_MDMAEN $10
+	SNES_MDMAEN $10
 
 	rtl
 	
@@ -186,7 +186,7 @@ LKS_DMA_PAL:
 		ldx #LKS_BUF_PAL&$FFFF
 	
 	++:
-    
+	
 	lda #$7E
 	ldy #$100
 	
@@ -194,9 +194,9 @@ LKS_DMA_PAL:
 	stx DMA_ADDL+CHANNEL5
 	sty DMA_SIZEL+CHANNEL5
 	
-    SNES_MDMAEN $20
-    
-    stz LKS_PAL.type
+	SNES_MDMAEN $20
+	
+	stz LKS_PAL.type
 
 	rtl
 	

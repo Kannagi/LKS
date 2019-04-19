@@ -1,8 +1,8 @@
 
 
 .MACRO LKS_Clear_RAM
-    
-    /*
+	
+	/*
 	ldy #$0000
 	sty 0
 	ldx #$0000
@@ -39,10 +39,10 @@
 .ENDM
 
 .MACRO LKS_Clear_VRAM
-    
-    SNES_VMADD $0000
-    
-    ldy #$0000
+	
+	SNES_VMADD $0000
+	
+	ldy #$0000
 	ldx #0
 	-:
 		sty VMDATAL
@@ -67,15 +67,15 @@
 		
 	cpx #$1000
 	bne -
-    
+	
 	
 	
 .ENDM
 
 .MACRO LKS_Clear_OAM
-    
+	
 	SNES_OAMADDL $0000
-    
+	
 	ldy #$0000
 	sty $0000
 	ldx #$0000
